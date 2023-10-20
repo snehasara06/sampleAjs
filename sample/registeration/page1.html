@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="registerController">
+    <form name="registerForm" ng-submit="submit()">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="user.name" 
+        ng-pattern="/^[A-Za-z\s]*$" minlength="4" maxlength="40">
+        <!-- \s->whitescape character -->
+
+        <label>Mobile Number</label>
+        <input type="text" name="mobileno" ng-model="user.mobileno" 
+        ng-pattern="/^\d{10}$/">
+
+        <label>Email</label>
+        <input type="text" name="email" ng-model="user.email" 
+
+
+    </form>
+</body>
+</html>

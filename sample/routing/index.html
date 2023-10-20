@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>AngularJS Routing Example</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS Routing Example</h1>
+	<a href="#/">Home</a>
+	<a href="#/about">About</a>
+	<a href="#/contact">Contact</a>
+	<div ng-view></div>
+	<script>
+		var app = angular.module('myApp', ['ngRoute']);
+		app.config(function ($routeProvider) {
+			$routeProvider
+				.when('/', {
+					templateUrl: 'home.html'
+				})
+				.when('/about', {
+					templateUrl: 'about.html'
+				})
+				.when('/contact', {
+					templateUrl: 'contact.html'
+				})
+				.otherwise({
+					redirectTo: '/'
+				});
+		});
+
+	</script>
+</body>
+
+</html>
